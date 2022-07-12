@@ -52,36 +52,42 @@ public class App {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        try (Scanner sc = new Scanner(System.in)) {
-            whishme();
-            // speak(g);
-            speak("welcome sir ");
-            speak("how may i help you");
-            System.out.println("(type 'help' for commands)");
-            while (true) {
-                System.out.print("\n > ");
-                sc.skip("(\r\n|[\n\r\u0085])?");
-                String com = sc.next();
-                System.out.print(">> ");
-                sc.skip("(\r\n|[\n\r\u0085])?");
-                if (com.equals("name")) {
-                    speak("rudwig");
-                } else if (com.equals("work")) {
-                    speak("penetration");
-                } else if (com.equals("quit")) {
-                    speak("fuck offf");
-                    break;
-                } else if (com.equals("time")) {
-                    time();
-                } else {
-                    System.out.println("please give appropriate queries");
+        Process process = java.lang.Runtime.getRuntime().exec("ping www.geeksforgeeks.org");
+        int x = process.waitFor();
+        if (x == 0) {
+            System.out.println("connected");
+            try (Scanner sc = new Scanner(System.in)) {
+                whishme();
+                // speak(g);
+                speak("welcome sir ");
+                speak("how may i help you");
+                System.out.println("(type 'help' for commands)");
+                while (true) {
+                    System.out.print("\n > ");
+                    sc.skip("(\r\n|[\n\r\u0085])?");
+                    String com = sc.next();
+                    System.out.print(">> ");
+                    sc.skip("(\r\n|[\n\r\u0085])?");
+                    if (com.equals("name")) {
+                        speak("rudwig");
+                    } else if (com.equals("work")) {
+                        speak("penetration");
+                    } else if (com.equals("quit")) {
+                        speak("fuck offf");
+                        break;
+                    } else if (com.equals("time")) {
+                        time();
+                    } else {
+                        System.out.println("please give appropriate queries");
+                    }
+
                 }
-
             }
+        } else {
+            speak("Internet Not Connected");
         }
-
     }
 }
