@@ -1,0 +1,17 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\cmu_time_awb.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\cmu_us_kal.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\cmudict04.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\cmulex.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\cmutimelex.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\en_us.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\freetts.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\freetts-jsapi10.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\jsapi.jar",
+        "c:\\Users\\Amol\\Downloads\\freetts-1.2.2-bin\\freetts-1.2\\lib\\mbrola.jar"
+    ]
+}
