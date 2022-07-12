@@ -63,10 +63,10 @@ public class App {
         if (x == 0) {
             System.out.println("connected");
             try (Scanner sc = new Scanner(System.in)) {
-                // whishme();
-                // speak(g);
-                // speak("welcome sir ");
-                // speak("how may i help you");
+                whishme();
+                // speak(g);nam
+                speak("welcome sir ");
+                speak("how may i help you");
                 System.out.println("(type 'help' for commands)");
                 while (true) {
                     System.out.print("\n > ");
@@ -75,14 +75,15 @@ public class App {
                     System.out.print(">> ");
                     sc.skip("(\r\n|[\n\r\u0085])?");
                     if (com.equals("name")) {
-                        speak("rudwig");
+                        speak("tu kay kaartoy");
                     } 
                     else if (com.equals("work")) {
                         speak("penetration");
                     } 
                     else if (com.equals("quit")) {
                         speak("fuck offf");
-                        break;
+                        // break;
+                        System.exit(0);
                     } 
                     else if (com.equals("time")) {
                         time();
