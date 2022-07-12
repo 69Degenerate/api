@@ -1,5 +1,8 @@
 package test.src;
-
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -60,10 +63,10 @@ public class App {
         if (x == 0) {
             System.out.println("connected");
             try (Scanner sc = new Scanner(System.in)) {
-                whishme();
+                // whishme();
                 // speak(g);
-                speak("welcome sir ");
-                speak("how may i help you");
+                // speak("welcome sir ");
+                // speak("how may i help you");
                 System.out.println("(type 'help' for commands)");
                 while (true) {
                     System.out.print("\n > ");
@@ -73,15 +76,88 @@ public class App {
                     sc.skip("(\r\n|[\n\r\u0085])?");
                     if (com.equals("name")) {
                         speak("rudwig");
-                    } else if (com.equals("work")) {
+                    } 
+                    else if (com.equals("work")) {
                         speak("penetration");
-                    } else if (com.equals("quit")) {
+                    } 
+                    else if (com.equals("quit")) {
                         speak("fuck offf");
                         break;
-                    } else if (com.equals("time")) {
+                    } 
+                    else if (com.equals("time")) {
                         time();
-                    } else {
+                    }
+                    else if(com.equals("search")){
+                        System.out.println("what you wanna search");
+                        String search=sc.nextLine();
+                        String url = "https://www.google.com/search?client=firefox-b-lm&q="+search;
+
+                        if(Desktop.isDesktopSupported()){
+                            Desktop desktop = Desktop.getDesktop();
+                            try {
+                                desktop.browse(new URI(url));
+                            } catch (IOException | URISyntaxException e) {
+                                e.printStackTrace();
+                            }
+                        }else{
+                            Runtime runtime = Runtime.getRuntime();
+                            try {
+                                runtime.exec("xdg-open " + url);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                    else if(com.equals("search")){
+                        System.out.println("what you wanna search :");
+                        // System.out.println("\n > ");
+                        // sc.skip("(\r\n|[\n\r\u0085])?");
+                        String search=sc.next();
+                        String url = "https://www.google.com/search?client=firefox-b-lm&q="+search;
+
+                        if(Desktop.isDesktopSupported()){
+                            Desktop desktop = Desktop.getDesktop();
+                            try {
+                                desktop.browse(new URI(url));
+                            } catch (IOException | URISyntaxException e) {
+                                e.printStackTrace();
+                            }
+                        }else{
+                            Runtime runtime = Runtime.getRuntime();
+                            try {
+                                runtime.exec("xdg-open " + url);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } 
+                    else if(com.equals("wikipedia")){
+                        // System.out.print("\n >>> ");
+                        System.out.println("what you wanna search :");
+                        // sc.skip("(\r\n|[\n\r\u0085])?");
+                        String search=sc.nextLine();
+                        String url = "https://en.wikipedia.org/wiki/"+search;
+       
+                        if(Desktop.isDesktopSupported()){
+                            Desktop desktop = Desktop.getDesktop();
+                            try {
+                                desktop.browse(new URI(url));
+                            } catch (IOException | URISyntaxException e) {
+                                e.printStackTrace();
+                            }
+                        }else{
+                            Runtime runtime = Runtime.getRuntime();
+                            try {
+                                runtime.exec("xdg-open " + url);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } 
+                    
+                    else {
                         System.out.println("please give appropriate queries");
+                        
                     }
 
                 }
