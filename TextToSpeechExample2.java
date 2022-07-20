@@ -6,11 +6,11 @@ public class TextToSpeechExample2
 //text to listen  
 String speaktext;   
 //function that makes text audible  
-public void dospeak(String speak, String voicename)      
+public void dospeak(String speak)      
 {      
 //assigning text to speak variable  
 speaktext=speak;      
-String voiceName =voicename;      
+String voiceName ="kevin16";      
 try      
 {      
 //the SynthesizerModeDesc class inherits the EngineModeDesc with properties  
@@ -49,7 +49,11 @@ System.out.println(message);
 }      
 public static void main(String args[])      
 {      
-TextToSpeechExample2 obj=new TextToSpeechExample2();   
-obj.dospeak("Don't limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve.", "kevin16");      
+TextToSpeechExample2 obj=new TextToSpeechExample2();
+Scanner sc = new Scanner(System.in);
+System.out.println("what do you want me to speak");
+String t=sc.nextLine();
+obj.dospeak(t);      
+
 }      
 }  
