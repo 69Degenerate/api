@@ -75,7 +75,7 @@ public class App {
                     System.out.print(">> ");
                     sc.skip("(\r\n|[\n\r\u0085])?");
                     if (com.equals("name")) {
-                        speak("tu kay kaartoy");
+                        speak("vlaaddespar trotsky");
                     } 
                     else if (com.equals("work")) {
                         speak("penetration");
@@ -164,7 +164,9 @@ public class App {
                 }
             }
         } else {
+            speak("can not proceed");
             speak("Internet Not Connected");
+            System.exit(1);
         }
     }
 }
